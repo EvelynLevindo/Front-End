@@ -1,0 +1,40 @@
+body {
+    background-color:aliceblue;
+    color:darkslateblue;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+input {
+    width: 300px;
+    height: 40px;
+    font-size: 15px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.dark-mode {
+    background-color:darkslateblue;
+    color: aliceblue;
+}
+
+.card {
+    border: 1px solid;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#btn-enviar{
+    margin: 6px;
+    width: 305px;
+}
+
+#btn-cor {
+    padding: 2px 5px;
+    margin: 20px;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}

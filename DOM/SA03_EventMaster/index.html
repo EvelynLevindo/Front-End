@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Convidados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="barra">
+            <h1>CADASTRO</h1>
+            <button id="btn-cor">Modo Escuro</button>
+        </div>
+        <form id="meuForm">
+            <input type="text" id="nome" placeholder="Nome"><br>
+            <input type="text" id="email" placeholder="E-mail"><br>
+            <input type="text" id="tel" placeholder="Telefone"><br>
+            <input type="text" id="cargo" placeholder="Cargo"><br>
+            <input type="text" id="idade" placeholder="Idade"><br>
+            <p id="mensagem-erro" style="color: rgb(255, 81, 81);"></p>
+            <button id="btn-enviar" type="submit">Enviar</button>
+        </form>
+        <br>
+        <hr>
+        <h3>CONVIDADOS</h3>
+        <div id="lista-convidados"></div>
+    </div>
+</body>
+    <script src="script.js"></script>
+</html>
