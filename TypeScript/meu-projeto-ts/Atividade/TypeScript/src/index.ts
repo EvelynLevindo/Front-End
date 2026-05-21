@@ -19,7 +19,7 @@ function renderizarPerfil(usuario: Usuario): void {
   }
 }
 
-// Usuarios para testar
+// Usuarios para teste
 const admin: Usuario = {
   id: 1,
   nome: "Carlos",
