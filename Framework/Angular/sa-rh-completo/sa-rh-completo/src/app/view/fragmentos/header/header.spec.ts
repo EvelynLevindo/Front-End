@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PainelVagas } from './painel-vagas';
+import { Header } from './header';
 
-describe('PainelVagas', () => {
-  let component: PainelVagas;
-  let fixture: ComponentFixture<PainelVagas>;
+describe('Header', () => {
+  let component: Header;
+  let fixture: ComponentFixture<Header>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PainelVagas],
+      imports: [Header],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(PainelVagas);
+    fixture = TestBed.createComponent(Header);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

@@ -9,7 +9,7 @@ import { Vaga } from '../model/vaga.model';
 export class Api {
   //atributo
   //endereço de conexão da api
-  private apiUrl = "http://localhost:3011/vagas";//caminho da API
+  private apiUrl = "http://localhost:3000/vagas";//caminho da API
 
 
   constructor(private http: HttpClient){}
@@ -22,21 +22,21 @@ export class Api {
     return this.http.get<Vaga[]>(this.apiUrl); // conecta na api e retorna o conteúdo no vetor de Vagas
   }
 
-  // post - alterado para retornar uma única Vaga
-  cadastrarVaga(vaga: Vaga) : Observable<Vaga> {
-    return this.http.post<Vaga>(this.apiUrl, vaga); 
+  //post - create
+  cadastrarVaga(vaga: Vaga) : Observable<Vaga[]> {
+    return this.http.post<Vaga[]>(this.apiUrl, vaga); // passa o link da conexão e o valor vaga
   }
 
-  // put - alterado para retornar uma única Vaga
-  atualizarVaga(id:any, vaga: Vaga) : Observable<Vaga> { 
-    const UrlAtualizado = `${this.apiUrl}/${id}`; 
-    return this.http.put<Vaga>(UrlAtualizado, vaga);
+  //put - update
+  atualizarVaga(id:any, vaga: Vaga) : Observable<Vaga[]> { // para atualizar precisa passar o id
+    const UrlAtualizado = `${this.apiUrl}/${id}`; // http://localhost:3000/vagas/id
+    return this.http.put<Vaga[]>(UrlAtualizado, vaga);
   }
 
-  // delete - alterado para any, já que o json-server retorna um objeto vazio
-  removerVaga(id:any): Observable<any>{ 
+  //delete - delete
+  removerVaga(id:any): Observable<Vaga[]>{ // para deletar precisa passar o id
     const urlDeletar = `${this.apiUrl}/${id}`;
-    return this.http.delete<any>(urlDeletar);
+    return this.http.delete<Vaga[]>(urlDeletar);
   }
 
 }

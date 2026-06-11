@@ -33,23 +33,20 @@
     align-items: flex-start;
     padding: 1rem;
 
-    .navItens{
+    .navItens {
       flex-direction: column;
       width: 100%;
       gap: 0;
       margin-top: 1rem;
 
-      .navLink{
+      .navLink {
         padding: 0.8rem 0;
         border-top: 1px solid rgba(0, 0, 0, 0.05)
       }
 
-      &:last-child{
+      &:last-child {
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
       }
-
     }
-
-
   }
 }

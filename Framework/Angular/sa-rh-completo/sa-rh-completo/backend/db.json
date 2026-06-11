@@ -1,0 +1,47 @@
+{
+  "vagas": [
+    {
+      "id": "1",
+      "nome": "Desenvolver FrontEnd Jr",
+      "foto": "foto1.jpg",
+      "descricao": "Trabalhar com HTML, CSS e JS",
+      "salario": 5000
+    },
+    {
+      "id": "2",
+      "nome": "Desenvolver BackEnd Pleno",
+      "foto": "foto2.jpg",
+      "descricao": "Trabalhar com Desenvolvimento Web",
+      "salario": 9000
+    },
+    {
+      "id": "3",
+      "nome": "Desenvolver Fullstack Senior",
+      "foto": "foto3.jpg",
+      "descricao": "Trabalhar com Desenvolvimento Web",
+      "salario": 18000
+    },
+    {
+      "nome": "Design UX/IU",
+      "foto": "foto4.jpg",
+      "descricao": "Trabalhar com Design de páginas web ",
+      "salario": 5000,
+      "id": "031Bqg_N6Bo"
+    },
+    {
+      "id": "WO-TUbLClGQ",
+      "nome": "",
+      "foto": "",
+      "descricao": "",
+      "salario": 0
+    },
+    {
+      "id": "-f1NNYGJEmk",
+      "nome": "",
+      "foto": "",
+      "descricao": "",
+      "salario": 0
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

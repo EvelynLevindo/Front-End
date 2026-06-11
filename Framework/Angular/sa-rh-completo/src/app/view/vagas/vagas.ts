@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Api } from '../../service/api';
 import { Vaga } from '../../model/vaga.model';
-import { CommonModule } from '@angular/common'; // 1. Altere para o CommonModule nativo
+
 
 @Component({
   selector: 'app-vagas',
-  imports: [CommonModule], // 2. Declare o CommonModule aqui
+  imports: [],
   templateUrl: './vagas.html',
   styleUrl: './vagas.scss',
 })
@@ -22,7 +22,7 @@ export class Vagas implements OnInit {
 
   // método para Listar as Vagas (Controller)
   listarVagas(): void{
-    this._apiService.getVagas().subscribe(
+    this._apiService.getVagas().subscribe( // é o método do observable que permite fazer alguma coisa depois que estabeleceu a conexão
       (retornaVagas) => {
         this.vagas = retornaVagas.map(
           (e) => {
