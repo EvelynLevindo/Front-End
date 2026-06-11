@@ -1,0 +1,26 @@
+<section class="curriculo-detail">
+  <h1>Meu Currículo</h1>
+
+  <ng-container *ngIf="curriculo; else emptyState">
+    <div class="box">
+      <h2>{{ curriculo.nome }}</h2>
+      <p><strong>Email:</strong> {{ curriculo.email }}</p>
+      <p><strong>Telefone:</strong> {{ curriculo.telefone }}</p>
+      <p><strong>Formação:</strong> {{ curriculo.formacao }}</p>
+      <p><strong>Experiência:</strong> {{ curriculo.experiencia }}</p>
+      <p><strong>Habilidades:</strong> {{ curriculo.habilidades }}</p>
+      <p><strong>LinkedIn:</strong> <a [href]="curriculo.linkedin" target="_blank">{{ curriculo.linkedin }}</a></p>
+      <p><strong>Resumo:</strong> {{ curriculo.resumo }}</p>
+      <div class="actions">
+        <a routerLink="/curriculos/editar/{{ curriculo.id }}">Editar meu currículo</a>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #emptyState>
+    <div class="empty-state">
+      <p>Nenhum currículo encontrado.</p>
+      <a routerLink="/curriculos/novo">Cadastrar meu currículo</a>
+    </div>
+  </ng-template>
+</section>

@@ -1,0 +1,23 @@
+<section class="curriculo-list">
+  <h1>Meus Currículos</h1>
+
+  <div *ngIf="curriculos.length === 0" class="empty-state">
+    <p>Nenhum currículo encontrado. <a routerLink="/curriculos/novo">Cadastrar agora</a>.</p>
+  </div>
+
+  <div class="cards" *ngIf="curriculos.length > 0">
+    <article class="card" *ngFor="let curriculo of curriculos">
+      <h2>{{ curriculo.nome || 'Currículo sem nome' }}</h2>
+      <p><strong>Email:</strong> {{ curriculo.email }}</p>
+      <p><strong>Telefone:</strong> {{ curriculo.telefone }}</p>
+      <p><strong>Formação:</strong> {{ curriculo.formacao }}</p>
+      <p><strong>Experiência:</strong> {{ curriculo.experiencia }}</p>
+      <p><strong>Habilidades:</strong> {{ curriculo.habilidades }}</p>
+      <p><strong>LinkedIn:</strong> <a [href]="curriculo.linkedin" target="_blank">{{ curriculo.linkedin }}</a></p>
+      <div class="actions">
+        <a routerLink="/curriculos/editar/{{ curriculo.id }}">Editar</a>
+        <button type="button" (click)="deleteCurriculo(curriculo.id)">Excluir</button>
+      </div>
+    </article>
+  </div>
+</section>

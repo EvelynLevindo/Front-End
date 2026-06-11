@@ -1,0 +1,59 @@
+.curriculo-list {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.curriculo-list h1 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.cards {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  padding: 1.25rem;
+  border-radius: 12px;
+  background: #f9fbff;
+  border: 1px solid #e4e8f0;
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.card p {
+  margin: 0.4rem 0;
+}
+
+.actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.actions a,
+.actions button {
+  color: #276ef1;
+  text-decoration: none;
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.actions button:hover,
+.actions a:hover {
+  text-decoration: underline;
+}
+
+.empty-state {
+  padding: 1rem;
+  background: #fff9e6;
+  border: 1px solid #ffe8a6;
+  border-radius: 10px;
+}

@@ -1,0 +1,50 @@
+.curriculo-detail {
+  max-width: 760px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #e8ebf1;
+}
+
+.curriculo-detail h1 {
+  margin-bottom: 1.25rem;
+}
+
+.box {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.box h2 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.box p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.actions {
+  margin-top: 1.25rem;
+}
+
+.actions a {
+  color: #276ef1;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.empty-state {
+  padding: 1rem;
+  background: #f3f8ff;
+  border: 1px solid #dbe9ff;
+  border-radius: 10px;
+}
+
+.empty-state a {
+  color: #276ef1;
+  text-decoration: none;
+  font-weight: 600;
+}
