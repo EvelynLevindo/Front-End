@@ -7,7 +7,7 @@ import { Curriculo } from '../model/curriculo.model';
   providedIn: 'root',
 })
 export class CurriculoService {
-  private apiUrl = 'http://localhost:3007/curriculos';
+  private apiUrl = 'http://localhost:3011/curriculos';
 
   constructor(private http: HttpClient) {}
 
@@ -15,7 +15,7 @@ export class CurriculoService {
     return this.http.get<Curriculo[]>(this.apiUrl);
   }
 
-  getCurriculoById(id: number): Observable<Curriculo> {
+  getCurriculoById(id: string): Observable<Curriculo> {
     return this.http.get<Curriculo>(`${this.apiUrl}/${id}`);
   }
 
@@ -32,7 +32,7 @@ export class CurriculoService {
     return this.http.put<Curriculo>(url, curriculo);
   }
 
-  deleteCurriculo(id: number): Observable<void> {
+  deleteCurriculo(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }

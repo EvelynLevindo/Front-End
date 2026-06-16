@@ -22,7 +22,7 @@ export class CurriculoList implements OnInit {
     });
   }
 
-  deleteCurriculo(id: number): void {
+  deleteCurriculo(id: string): void {
     if (!confirm('Deseja excluir este currículo?')) {
       return;
     }

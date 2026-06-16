@@ -9,7 +9,7 @@ import { Vaga } from '../model/vaga.model';
 export class Api {
   //atributo
   //endereço de conexão da api
-  private apiUrl = "http://localhost:3007/vagas"
+  private apiUrl = "http://localhost:3011/vagas"
 
   constructor (private http: HttpClient) {}
 
@@ -29,7 +29,7 @@ export class Api {
   //put => update
   atualizarVaga(id:any, vaga: Vaga) : Observable<Vaga[]> {
     //para atualizar, precisa do id
-    const UrlAtualizado = `${this.apiUrl}/${id}`; //http://localhost:3007/vagas/id
+    const UrlAtualizado = `${this.apiUrl}/${id}`; //http://localhost:3011/vagas/id
     return this.http.put<Vaga[]>(UrlAtualizado, vaga);
   }
 

@@ -22,25 +22,68 @@
       "salario": 18000
     },
     {
+      "id": "031Bqg_N6Bo",
       "nome": "Design UX/IU",
       "foto": "foto4.jpg",
-      "descricao": "Trabalhar com Design de páginas web ",
-      "salario": 5000,
-      "id": "031Bqg_N6Bo"
+      "descricao": "Trabalhar com Design de páginas web namoro",
+      "salario": 5000
     },
     {
-      "id": "WO-TUbLClGQ",
-      "nome": "",
-      "foto": "",
-      "descricao": "",
-      "salario": 0
+      "id": "iy6xWlV4SnI",
+      "nome": "Design UX/IU",
+      "foto": "foto4.jpg",
+      "descricao": "Trabalhar com Design de páginas web namoro",
+      "salario": "4320"
+    }
+  ],
+  "curriculos": [
+    {
+      "id": "1",
+      "usuarioId": 1,
+      "nome": "Beto Carrero",
+      "email": "joao@email.com",
+      "telefone": "(11) 99999-9999",
+      "formacao": "Engenharia de Software",
+      "experiencia": "5 anos",
+      "habilidades": "Maizena e JavaScript",
+      "linkedin": "https://linkedin.com/in/joao",
+      "resumo": "Desenvolvedor full stack com experiência em web namoro"
     },
     {
-      "id": "-f1NNYGJEmk",
-      "nome": "",
-      "foto": "",
-      "descricao": "",
-      "salario": 0
+      "id": "2",
+      "usuarioId": 1,
+      "nome": "Maria Santos",
+      "email": "maria@email.com",
+      "telefone": "(11) 88888-8888",
+      "formacao": "Sistemas de Informação",
+      "experiencia": "3 anos em desenvolvimento",
+      "habilidades": "React, Vue, TypeScript",
+      "linkedin": "https://linkedin.com/in/maria",
+      "resumo": ""
+    },
+    {
+      "id": "z4ET80hQwfM",
+      "usuarioId": 1,
+      "nome": "Evelyn Levinha",
+      "email": "evelyn.levindo@aluno.senai.br",
+      "telefone": "121212",
+      "formacao": "212112",
+      "experiencia": "212212121",
+      "habilidades": "2111111111111",
+      "linkedin": "12",
+      "resumo": "111111111111"
+    },
+    {
+      "id": "TM2vLdmm2s4",
+      "usuarioId": 1,
+      "nome": "Evelyn Levindo",
+      "email": "evelyn.levindo@aluno.senai.br",
+      "telefone": "111112",
+      "formacao": "12",
+      "experiencia": "1212",
+      "habilidades": "12",
+      "linkedin": "12",
+      "resumo": "21"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -6,13 +6,13 @@
       Nome completo
       <input type="text" formControlName="nome" placeholder="Digite seu nome" />
     </label>
-    <div class="error" *ngIf="field.nome.invalid && field.nome.touched">Nome é obrigatório.</div>
+    <div class="error" *ngIf="field['nome'].invalid && field['nome'].touched">Nome é obrigatório.</div>
 
     <label>
       Email
       <input type="email" formControlName="email" placeholder="Digite seu email" />
     </label>
-    <div class="error" *ngIf="field.email.invalid && field.email.touched">
+    <div class="error" *ngIf="field['email'].invalid && field['email'].touched">
       Informe um email válido.
     </div>
 
@@ -20,7 +20,7 @@
       Telefone
       <input type="text" formControlName="telefone" placeholder="Digite seu telefone" />
     </label>
-    <div class="error" *ngIf="field.telefone.invalid && field.telefone.touched">
+    <div class="error" *ngIf="field['telefone'].invalid && field['telefone'].touched">
       Telefone é obrigatório.
     </div>
 
@@ -28,7 +28,7 @@
       Formação
       <textarea formControlName="formacao" rows="3" placeholder="Descreva sua formação"></textarea>
     </label>
-    <div class="error" *ngIf="field.formacao.invalid && field.formacao.touched">
+    <div class="error" *ngIf="field['formacao'].invalid && field['formacao'].touched">
       Formação é obrigatória.
     </div>
 
@@ -36,7 +36,7 @@
       Experiência
       <textarea formControlName="experiencia" rows="4" placeholder="Descreva sua experiência profissional"></textarea>
     </label>
-    <div class="error" *ngIf="field.experiencia.invalid && field.experiencia.touched">
+    <div class="error" *ngIf="field['experiencia'].invalid && field['experiencia'].touched">
       Experiência é obrigatória.
     </div>
 
@@ -44,7 +44,7 @@
       Habilidades
       <textarea formControlName="habilidades" rows="3" placeholder="Liste suas habilidades"></textarea>
     </label>
-    <div class="error" *ngIf="field.habilidades.invalid && field.habilidades.touched">
+    <div class="error" *ngIf="field['habilidades'].invalid && field['habilidades'].touched">
       Habilidades são obrigatórias.
     </div>
 
@@ -52,7 +52,7 @@
       LinkedIn
       <input type="text" formControlName="linkedin" placeholder="Link do perfil LinkedIn" />
     </label>
-    <div class="error" *ngIf="field.linkedin.invalid && field.linkedin.touched">
+    <div class="error" *ngIf="field['linkedin'].invalid && field['linkedin'].touched">
       LinkedIn é obrigatório.
     </div>
 

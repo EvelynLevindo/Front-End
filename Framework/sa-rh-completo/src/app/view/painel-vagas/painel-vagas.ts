@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Vaga } from '../../model/vaga.model';
 import { Api } from '../../service/api';
 import { FormsModule } from '@angular/forms';
 
 @Component({
+  standalone: true,
   selector: 'app-painel-vagas',
-  imports: [FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './painel-vagas.html',
   styleUrl: './painel-vagas.scss',
 })
@@ -27,9 +29,11 @@ export class PainelVagas implements OnInit {
   // método para Listar as Vagas (Controller)
   listarVagas(): void {
     this._apiService.getVagas().subscribe((retornaVagas) => {
-      this.vagas = retornaVagas.map((e) => {
-        return new Vaga(e.id, e.nome, e.foto, e.descricao, e.salario);
-      }); // armazena o conteúdo retornado da API no vetor de vagas
+      this.vagas = retornaVagas
+        .filter((e) => e.nome && e.nome.toString().trim().length > 0)
+        .map((e) => {
+          return new Vaga(e.id, e.nome, e.foto, e.descricao, e.salario);
+        }); // armazena o conteúdo retornado da API no vetor de vagas
     });
   }
 
@@ -37,21 +41,21 @@ export class PainelVagas implements OnInit {
   cadastrarVaga(): void {
     this._apiService.cadastrarVaga(this.vaga).subscribe(() => {
       this.vaga = new Vaga(0, '', '', '', 0); //criar um obj vazio
-      this.listarVagaUnica(this.vaga); //atualizar a vaga com as informações do formulário
+      this.listarVagas(); // atualizar a lista de vagas
       alert('Vaga Cadastrada com Sucesso!!');
     });
   }
 
   listarVagaUnica(vaga: Vaga) {
-    //limpa ou preenche os campos do formulároa
+    // preencher os campos do formulário com o item selecionado
     this.vaga = vaga;
   }
 
-  // atualizar  Vaga
+  // atualizar Vaga
   atualizarVaga(id: any): void {
     this._apiService.atualizarVaga(id, this.vaga).subscribe(() => {
       this.vaga = new Vaga(0, '', '', '', 0); //criar um obj vazio
-      this.listarVagaUnica(this.vaga); //limpa os campos do formulário
+      this.listarVagas(); // atualizar a lista de vagas
       alert('Vaga Atualizada com Sucesso!!');
     });
   }
@@ -60,7 +64,7 @@ export class PainelVagas implements OnInit {
   excluirVaga(id: any): void {
     this._apiService.removerVaga(id).subscribe(() => {
       this.vaga = new Vaga(0, '', '', '', 0); //criar um obj vazio
-      this.listarVagaUnica(this.vaga); //limpa os campos do formulário
+      this.listarVagas(); // atualizar a lista de vagas
       alert('Vaga Excluída com Sucesso!!');
     });
   }

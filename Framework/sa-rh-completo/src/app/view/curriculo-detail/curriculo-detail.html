@@ -12,7 +12,7 @@
       <p><strong>LinkedIn:</strong> <a [href]="curriculo.linkedin" target="_blank">{{ curriculo.linkedin }}</a></p>
       <p><strong>Resumo:</strong> {{ curriculo.resumo }}</p>
       <div class="actions">
-        <a routerLink="/curriculos/editar/{{ curriculo.id }}">Editar meu currículo</a>
+        <a [routerLink]="['/curriculos/editar', curriculo.id]">Editar meu currículo</a>
       </div>
     </div>
   </ng-container>

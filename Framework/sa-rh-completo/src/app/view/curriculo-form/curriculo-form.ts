@@ -17,7 +17,7 @@ export class CurriculoForm implements OnInit {
   public isEditMode = false;
   public pageTitle = 'Cadastrar Currículo';
   private currentUserId = 1;
-  private curriculoId?: number;
+  private curriculoId?: string;
 
   constructor(
     private fb: FormBuilder,
@@ -42,12 +42,12 @@ export class CurriculoForm implements OnInit {
     if (id) {
       this.isEditMode = true;
       this.pageTitle = 'Editar Currículo';
-      this.curriculoId = Number(id);
+      this.curriculoId = id;
       this.loadCurriculo(this.curriculoId);
     }
   }
 
-  private loadCurriculo(id: number): void {
+  private loadCurriculo(id: string): void {
     this.curriculoService.getCurriculoById(id).subscribe((curriculo) => {
       this.form.patchValue({
         nome: curriculo.nome,
@@ -69,7 +69,7 @@ export class CurriculoForm implements OnInit {
     }
 
     const curriculo = new Curriculo(
-      this.curriculoId ?? 0,
+      this.curriculoId ?? '',
       this.currentUserId,
       this.form.value.nome,
       this.form.value.email,

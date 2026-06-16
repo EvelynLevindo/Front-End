@@ -15,7 +15,7 @@
       <p><strong>Habilidades:</strong> {{ curriculo.habilidades }}</p>
       <p><strong>LinkedIn:</strong> <a [href]="curriculo.linkedin" target="_blank">{{ curriculo.linkedin }}</a></p>
       <div class="actions">
-        <a routerLink="/curriculos/editar/{{ curriculo.id }}">Editar</a>
+        <a [routerLink]="['/curriculos/editar', curriculo.id]">Editar</a>
         <button type="button" (click)="deleteCurriculo(curriculo.id)">Excluir</button>
       </div>
     </article>

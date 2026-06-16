@@ -1,6 +1,6 @@
 export class Curriculo {
   constructor(
-    public id: number,
+    public id: string,
     public usuarioId: number,
     public nome: string,
     public email: string,
@@ -29,7 +29,7 @@ export class Curriculo {
 
   fromMap(map: any): Curriculo {
     return new Curriculo(
-      map.id,
+      String(map.id),
       map.usuarioId,
       map.nome,
       map.email,
