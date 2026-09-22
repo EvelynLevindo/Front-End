@@ -1,7 +1,7 @@
 import TarefaAction from "./TarefaAction";
 
 // Renderiza o cartão individual de cada tarefa da lista de tarefas com valores personalizados
-function TarefaItem({titulo, descricao, prioridade = "Média", concluida = false}) {
+function TarefaItem({id, titulo, descricao, prioridade = "Média", concluida = false, remover, mudar}) {
     const statusLabel = concluida ? "Concluída" :
     "Pendente";
 
