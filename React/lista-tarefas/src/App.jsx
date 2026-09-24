@@ -37,7 +37,7 @@ function App() {
     <main className="app-container">
       <Header />
       <TarefaForm aoAdicionar={handleAdicionar} />
-      <TarefaFilters currentFilter={filter} aoFilter={setFilter} />
+      <TarefaFilters currentFilter={filter} aoFilter={setFiltrar} />
       <p className="tarefa-contador">Tarefas Cadastradas: {tarefas.length}</p>
       <TarefaList 
         tarefas={tarefas} 
