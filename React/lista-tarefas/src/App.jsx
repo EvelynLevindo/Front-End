@@ -1,33 +1,49 @@
+import { useState } from "react";
+
 import Header from "./components/Header";
 import TarefaForm from "./components/TarefaForm";
-import TarefaItem from "./components/TarefaItem";
 import TarefaList from "./components/TarefaList";
 import { tarefaInicial } from "./data/tarefaMock";
+import TarefaFilters from "./components/TarefaFilters";
 
 function App() {
+  const [tarefas, setTarefas] = useState(tarefaInicial);
+
   function handleMudar(id) {
-    console.log("Alterar Status da Tarefa", id);
+    setTarefas((prevTarefas) =>
+      prevTarefas.map((tarefa) =>
+        tarefa.id === id ? { ...tarefa, concluida: !tarefa.concluida } : tarefa
+      )
+    );
   }
 
   function handleRemover(id) {
-    console.log("Remover Tarefa", id);
+    setTarefas((prevTarefas) => prevTarefas.filter((tarefa) => tarefa.id !== id));
   }
 
   function handleAdicionar(titulo) {
-    console.log("Adicionar Nova Tarefa", titulo);
+    const novaTarefa = {
+      id: Date.now().toString(),
+      titulo,
+      descricao: "Nova Tarefa do Usuário",
+      prioridade: "Normal",
+      concluida: false
+    };
+
+    setTarefas((prevTarefas) => [novaTarefa, ...prevTarefas]);
   }
 
-  return(
+  return (
     <main className="app-container">
-      <Header/>
-      <section className="app-content">
-        <TarefaForm aoAddTarefa={handleAdicionar}/>
-        <TarefaList
-          tarefas={tarefaInicial}
-          aoMudarTarefa={handleMudar}
-          aoRemoverTarefa={handleRemover}
-        />
-      </section>
+      <Header />
+      <TarefaForm aoAdicionar={handleAdicionar} />
+      <TarefaFilters currentFilter={filter} aoFilter={setFilter} />
+      <p className="tarefa-contador">Tarefas Cadastradas: {tarefas.length}</p>
+      <TarefaList 
+        tarefas={tarefas} 
+        aoMudar={handleMudar} 
+        aoRemover={handleRemover} 
+      />
     </main>
   );
 }
