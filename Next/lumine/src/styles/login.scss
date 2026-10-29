@@ -1,0 +1,188 @@
+@use 'variables' as *;
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: $color-background;
+  position: relative;
+  overflow: hidden;
+
+  .ambient-glow-1 {
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background-color: rgba($color-highlight, 0.4);
+    filter: blur(80px);
+    pointer-events: none;
+  }
+
+  .ambient-glow-2 {
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background-color: rgba($color-secondary, 0.15);
+    filter: blur(90px);
+    pointer-events: none;
+  }
+
+  .login-card {
+    background-color: $color-surface-lowest;
+    border: 1px solid $color-border;
+    border-radius: $radius-xl;
+    padding: 2.25rem 2rem;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: $shadow-xl;
+    position: relative;
+    z-index: 10;
+    text-align: center;
+
+    .icon-wrapper {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background-color: $color-surface-low;
+      color: $color-secondary;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.875rem;
+      box-shadow: $shadow-sm;
+
+      .material-symbols-outlined {
+        font-size: 32px;
+      }
+    }
+
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: $radius-pill;
+      background-color: $color-surface-low;
+      color: $color-secondary;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.625rem;
+
+      .dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: $color-secondary;
+      }
+    }
+
+    h1 {
+      font-size: 1.625rem;
+      color: $color-primary;
+      margin-bottom: 0.5rem;
+    }
+
+    .login-description {
+      font-size: 0.875rem;
+      color: $color-text-muted;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .login-form {
+      text-align: left;
+
+      .password-input-group {
+        position: relative;
+
+        .btn-toggle-visibility {
+          position: absolute;
+          right: 0.75rem;
+          top: 50%;
+          transform: translateY(-50%);
+          background: none;
+          border: none;
+          color: $color-text-light;
+          cursor: pointer;
+          padding: 0.25rem;
+
+          &:hover {
+            color: $color-primary;
+          }
+        }
+      }
+
+      .status-alert {
+        padding: 0.75rem 1rem;
+        border-radius: $radius-md;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.625rem;
+        margin-bottom: 1rem;
+
+        &.alert-error {
+          background-color: $color-error-bg;
+          color: $color-error-text;
+          border: 1px solid rgba($color-error, 0.2);
+        }
+
+        &.alert-success {
+          background-color: $color-success-bg;
+          color: $color-success-text;
+          border: 1px solid rgba($color-success, 0.2);
+        }
+
+        &.alert-loading {
+          background-color: $color-surface-container;
+          color: $color-primary;
+          border: 1px solid $color-border;
+        }
+      }
+
+      .btn-submit {
+        width: 100%;
+        padding: 0.75rem;
+        margin-top: 0.75rem;
+      }
+    }
+
+    .login-footer {
+      margin-top: 1.75rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid $color-surface-container;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.875rem;
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: $color-secondary;
+        transition: color $transition-fast;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+
+      .system-version {
+        font-size: 0.75rem;
+        color: $color-text-light;
+      }
+    }
+  }
+}
